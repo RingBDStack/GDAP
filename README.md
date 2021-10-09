@@ -1,5 +1,5 @@
 # GDAP
-The code of paper "Code for "Generating Disentangled Arguments with Prompts: a Simple Event Extraction Framework that Works""
+The code of paper "Generating Disentangled Arguments with Prompts: a Simple Event Extraction Framework that Works"
 
 ## Event Datasets Preprocessing
 We use code and environments [[dygiepp](https://github.com/dwadden/dygiepp)] for data preprocessing.
