@@ -60,14 +60,15 @@ bash run_seq2seq_span.bash --data=dyiepp_ace2005_text2et_subtype --model=t5-base
 # ace05 tri extraction t5-base
 bash run_seq2seq_span.bash --data=dyiepp_ace2005_ettext2tri_subtype --model=t5-base --format=tri --metric_format=eval_trigger-F1
 
-# ace05 role extraction t5-base
+# ace05 argument extraction t5-base
 bash run_seq2seq_span.bash --data=dyiepp_ace2005_etrttext2role_subtype --model=t5-base --format=role --metric_format=eval_role-F1
 
 ```
 Format:
-```text
-format: triXXX
-``` 
+- `et`: event type detection
+- `tri`: trigger extraction
+- `role`: argument extraction
+
 Trained models are saved in the `models/` folder.
 
 ## Model Evaluation and Inference
