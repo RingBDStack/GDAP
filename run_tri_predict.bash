@@ -1,16 +1,13 @@
 export device="0"
 export et_model_path="XXX"
-
 export tri_model_path="XXX"
-
-export data_name=dyiepp_ace2005_et_subtype_span
+export et_data_name=dyiepp_ace2005_text2et_subtype_span
 export task_name="event"
 export batch=16
 export constraint_decoding="--constraint_decoding"
-# export constraint_decoding=""
 export decoding_format='tri'
 
-et_data_folder=data/text2target/${data_name}
+et_data_folder=data/text2target/${et_data_name}
 
 
 # et result 转化
