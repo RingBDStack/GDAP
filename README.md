@@ -1,57 +1,49 @@
 # GDAP
-The code of paper "Generating Disentangled Arguments with Prompts: a Simple Event Extraction Framework that Works"
+Code for paper [Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works](https://arxiv.org/abs/2110.04525)
 
-## Quick links
-* [Event Datasets Preprocessing](#Event-Datasets-Preprocessing)
-* [Model Training](#Model-Training)
-* [Model Evaluation and Inference](#Model-Evaluation-and-Inference)
-* [Expand to Other Tasks](#Expand-to-Other-Tasks)
+### Environment
 
-## Event Datasets Preprocessing
-We use code and environments [[dygiepp](https://github.com/dwadden/dygiepp)] for data preprocessing.
+- Python (verified: v3.8)
+- CUDA (verified: v11.1)
+- Packages (see [requirements.txt](./requirements.txt))
 
-### Environments
 
-- Python (verified on 3.8)
-- CUDA (verified on 11.1)
-- Python Packages (seen in requirements.txt)
+## Preprocessing
+We follow [dygiepp](https://github.com/dwadden/dygiepp) for data preprocessing.
 
-### Data Format
-
-- `text2et`: event type detection
-- `ettext2tri`: trigger extraction
-- `etrttext2role`: argument extraction
+- `text2et`: Event Type Detection
+- `ettext2tri`: Trigger Extraction
+- `etrttext2role`: Argument Extraction
 
 ```bash
-# the data after dyieapp deal
+# data processed by dyieapp
 data/text2target/dyiepp_ace1005_ettext2tri_subtype
 ├── event.schema 
 ├── test.json
 ├── train.json
 └── val.json
 
-# the data after data_convert.convert_text_to_target deal
+# data processed by  data_convert.convert_text_to_target
 data/text2target/dyiepp_ace1005_ettext2tri_subtype
 ├── event.schema
 ├── test.json
 ├── train.json
 └── val.json
 ```
-The commands may be used:
+Useful commands:
 
 ```bash
 python -m data_convert.convert_text_to_target # data/raw_data -> data/text2target
 python convert_dyiepp_to_sentence.py data/raw_data/dyiepp_ace2005 # doc -> sentence, used in evaluation
 ```
 
-## Model Training
-Training scripts as follows:
+## Training
+Relevant scripts:
 
 - `run_seq2seq.py`: Python code entry, modified from the transformers/examples/seq2seq/run_seq2seq.py
 - `run_seq2seq_span.bash`: Model training script logging to the log file.
 
-The command for the training is as follows (see bash scripts and Python files for the corresponding command-line
-arguments):
+Example usage (see the above two files for more details):
 
 ```bash
 # ace05 event type detection t5-base, the metric_format use eval_trigger-F1 
@@ -64,20 +56,30 @@ bash run_seq2seq_span.bash --data=dyiepp_ace2005_ettext2tri_subtype --model=t5-b
 bash run_seq2seq_span.bash --data=dyiepp_ace2005_etrttext2role_subtype --model=t5-base --format=role --metric_format=eval_role-F1
 
 ```
-Format:
-- `et`: event type detection
-- `tri`: trigger extraction
-- `role`: argument extraction
 
 Trained models are saved in the `models/` folder.
 
-## Model Evaluation and Inference
+## Evaluation
 - `run_tri_predict.bash`: trigger extraction evaluation and inference script.
 - `run_arg_predict.bash`: argument extraction evaluation and inference script.
 
-## Expand to Other Tasks
-please wait a minute
+## Todo
+We aim to expand the codebase for a wider range of tasks, including
+- [ ] Name Entity Recognition
+- [ ] Keyword Generation
+- [ ] Event Relation Identification 
 
-# code main reference
-- Thanks to Dygiepp: https://github.com/dwadden/dygiepp
-- Thanks to Text2Event: https://github.com/luyaojie/text2event
+## If you find this repo useful...
+Please give us a :star: and cite our paper as
+```bibtex
+@misc{si2021-GDAP,
+      title={Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works}, 
+      author={Jinghui Si and Xutan Peng and Chen Li and Haotian Xu and Jianxin Li},
+      year={2021},
+      eprint={2110.04525},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL}
+}
+```
+
+> This project borrows code from [Text2Event](https://github.com/luyaojie/text2event)
