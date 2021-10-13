@@ -1,5 +1,5 @@
 # GDAP
-Code for paper [Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works](https://arxiv.org/abs/2110.04525)
+Code for [Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works](https://arxiv.org/abs/2110.04525)
 
 ## Environment
 
@@ -70,7 +70,7 @@ We aim to expand the codebase for a wider range of tasks, including
 - [ ] Keyword Generation
 - [ ] Event Relation Identification 
 
-## If you find this repo useful...
+## If you find this repo helpful...
 Please give us a :star: and cite our paper as
 ```bibtex
 @misc{si2021-GDAP,
