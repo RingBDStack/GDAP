@@ -1,14 +1,15 @@
 # GDAP
 Code for paper [Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works](https://arxiv.org/abs/2110.04525)
 
-### Environment
+## Environment
 
 - Python (verified: v3.8)
 - CUDA (verified: v11.1)
 - Packages (see [requirements.txt](./requirements.txt))
 
+## Usage
 
-## Preprocessing
+### Preprocessing
 We follow [dygiepp](https://github.com/dwadden/dygiepp) for data preprocessing.
 
 - `text2et`: Event Type Detection
@@ -37,13 +38,13 @@ python -m data_convert.convert_text_to_target # data/raw_data -> data/text2targe
 python convert_dyiepp_to_sentence.py data/raw_data/dyiepp_ace2005 # doc -> sentence, used in evaluation
 ```
 
-## Training
+### Training
 Relevant scripts:
 
 - `run_seq2seq.py`: Python code entry, modified from the transformers/examples/seq2seq/run_seq2seq.py
 - `run_seq2seq_span.bash`: Model training script logging to the log file.
 
-Example usage (see the above two files for more details):
+Example (see the above two files for more details):
 
 ```bash
 # ace05 event type detection t5-base, the metric_format use eval_trigger-F1 
@@ -59,7 +60,7 @@ bash run_seq2seq_span.bash --data=dyiepp_ace2005_etrttext2role_subtype --model=t
 
 Trained models are saved in the `models/` folder.
 
-## Evaluation
+### Evaluation
 - `run_tri_predict.bash`: trigger extraction evaluation and inference script.
 - `run_arg_predict.bash`: argument extraction evaluation and inference script.
 
