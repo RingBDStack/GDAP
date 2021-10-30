@@ -6,7 +6,7 @@ import numpy as np
 from copy import deepcopy
 from pprint import pprint
 from extraction.event_schema import EventSchema
-from extraction.predict_parser.target_predict_parser import TreePredictParser, SpanPredictParser, RTRolePredictParser, RolePredictParser, TriPredictParser
+from extraction.predict_parser.target_predict_parser import RolePredictParser, TriPredictParser
 
 
 def read_file(file_name):
@@ -198,9 +198,6 @@ def main():
     )
 
     decoding_format_dict = {
-        'tree': TreePredictParser,
-        'span': SpanPredictParser,
-        'rtrole': RTRolePredictParser,
         'role': RolePredictParser,
         'tri': TriPredictParser
     }

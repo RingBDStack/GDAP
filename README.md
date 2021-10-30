@@ -48,7 +48,7 @@ Example (see the above two files for more details):
 
 ```bash
 # ace05 event type detection t5-base, the metric_format use eval_trigger-F1 
-bash run_seq2seq_span.bash --data=dyiepp_ace2005_text2et_subtype --model=t5-base --format=et --metric_format=eval_trigger-F1
+bash run_seq2seq_span.bash --data=dyiepp_ace2005_text2et_subtype --model=t5-base --format=tri --metric_format=eval_trigger-F1
 
 # ace05 tri extraction t5-base
 bash run_seq2seq_span.bash --data=dyiepp_ace2005_ettext2tri_subtype --model=t5-base --format=tri --metric_format=eval_trigger-F1
@@ -59,6 +59,8 @@ bash run_seq2seq_span.bash --data=dyiepp_ace2005_etrttext2role_subtype --model=t
 ```
 
 Trained models are saved in the `models/` folder.
+
+The event type detection use the same output format and metric_format as trigger extraction, so the et exp result is included in eval_trigger-* and test_trigger-* of the log.
 
 ### Evaluation
 - `run_tri_predict.bash`: trigger extraction evaluation and inference script.
