@@ -1,5 +1,5 @@
 # GDAP
-Code for [Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works](https://arxiv.org/abs/2110.04525)
+Code for ***[Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works](https://arxiv.org/abs/2110.04525)***
 
 ## Environment
 
