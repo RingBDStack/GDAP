@@ -66,22 +66,14 @@ The event type detection use the same output format and metric_format as trigger
 - `run_tri_predict.bash`: trigger extraction evaluation and inference script.
 - `run_arg_predict.bash`: argument extraction evaluation and inference script.
 
-## Todo
-We aim to expand the codebase for a wider range of tasks, including
-- [ ] Name Entity Recognition
-- [ ] Keyword Generation
-- [ ] Event Relation Identification 
-
 ## If you find this repo helpful...
 Please give us a :star: and cite our paper as
 ```bibtex
-@misc{si2021-GDAP,
+@inproceedings{si2021-GDAP,
       title={Generating Disentangled Arguments with Prompts: A Simple Event Extraction Framework that Works}, 
       author={Jinghui Si and Xutan Peng and Chen Li and Haotian Xu and Jianxin Li},
-      year={2021},
-      eprint={2110.04525},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+      booktitle={IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)}, 
+      year={2022}
 }
 ```
 
