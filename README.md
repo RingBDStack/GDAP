@@ -48,7 +48,7 @@ Example (see the above two files for more details):
 
 ```bash
 # ace05 event type detection t5-base, the metric_format use eval_trigger-F1 
-bash run_seq2seq_span.bash --data=dyiepp_ace2005_text2et_subtype --model=t5-base --format=tri --metric_format=eval_trigger-F1
+bash run_seq2seq_span.bash --data=dyiepp_ace2005_text2et_subtype --model=t5-base --format=et --metric_format=eval_trigger-F1
 
 # ace05 tri extraction t5-base
 bash run_seq2seq_span.bash --data=dyiepp_ace2005_ettext2tri_subtype --model=t5-base --format=tri --metric_format=eval_trigger-F1
